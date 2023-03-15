@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+}
+
+.wrapper{
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.container {
+  max-width: 1440px;
+  margin: auto;
+  flex-grow: 1;
+  display: flex;
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+main {
+}
+
+footer {
+
+}
