@@ -1,0 +1,45 @@
+.header {
+  background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(44, 51, 222) 35%, rgb(132, 0, 255) 100%);
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding: .5vw;
+  box-shadow: 0 0 5px 2px #2f0077;
+
+  // .header__wrapper
+
+  &__wrapper {
+    max-width: 1440px;
+    width: 1440px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  // .header__general-information
+
+  &__general-information {
+    display: flex;
+    align-items: center;
+  }
+
+  // .header__menu
+
+  &__menu {
+
+  }
+
+  // .header__logo
+
+  &__logo {
+    width: 50px;
+  }
+
+  // .header__title
+
+  &__title {
+    color: white;
+    margin-left: 1vw;
+  }
+}
