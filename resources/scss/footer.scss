@@ -1,0 +1,17 @@
+.footer{
+  background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(44, 51, 222) 35%, rgb(132, 0, 255) 100%);
+  border-top-left-radius: 15px;
+  border-top-right-radius: 15px;
+  display: flex;
+  justify-content: center;
+  padding: .5vw;
+  box-shadow: 0 0 5px 2px #2f0077;
+  height: 200px;
+
+
+  &__wrapepr {
+    max-width: 1440px;
+    width: 1440px;
+    background-color: #d63384;
+  }
+}

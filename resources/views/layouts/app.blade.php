@@ -10,29 +10,29 @@
     <link rel="stylesheet" href="/css/reboot.css">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/header.css"/>
+    <link rel="stylesheet" href="/css/footer.css"/>
     @yield('styles')
     @yield('scripts')
 </head>
 <body>
 
-<div class="wrapper">
-    <header>
+<div id="wrapper">
+    <header id="header">
         @include('partials.header')
     </header>
 
 
-    <main>
-        <div class="container">
+    <main id="main">
+        <div id="container">
             @yield('content')
         </div>
     </main>
 
 
-    <footer>
-
+    <footer id="footer">
+        @include('partials.footer')
     </footer>
 </div>
-
 
 </body>
 </html>

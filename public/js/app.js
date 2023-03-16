@@ -2141,6 +2141,19 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
+/***/ "./resources/scss/footer.scss":
+/*!************************************!*\
+  !*** ./resources/scss/footer.scss ***!
+  \************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/scss/header.scss":
 /*!************************************!*\
   !*** ./resources/scss/header.scss ***!
@@ -6353,6 +6366,7 @@ const toJSONObject = (obj) => {
 /******/ 			"css/reboot": 0,
 /******/ 			"css/main": 0,
 /******/ 			"css/header": 0,
+/******/ 			"css/footer": 0,
 /******/ 			"css/app": 0
 /******/ 		};
 /******/ 		
@@ -6403,11 +6417,12 @@ const toJSONObject = (obj) => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/app"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/app"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/app"], () => (__webpack_require__("./resources/scss/header.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/app"], () => (__webpack_require__("./resources/scss/main.scss")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/app"], () => (__webpack_require__("./resources/css/reboot.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/footer","css/app"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/footer","css/app"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/footer","css/app"], () => (__webpack_require__("./resources/scss/footer.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/footer","css/app"], () => (__webpack_require__("./resources/scss/header.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/footer","css/app"], () => (__webpack_require__("./resources/scss/main.scss")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/reboot","css/main","css/header","css/footer","css/app"], () => (__webpack_require__("./resources/css/reboot.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
