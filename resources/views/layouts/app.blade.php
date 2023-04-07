@@ -5,7 +5,7 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="icon" href="/storage/images/logo.png" type="image/icon type">
+    <link rel="icon" href="/storage/images/logo.png" type="image/icon">
     <title>@yield('title')</title>
     <link rel="stylesheet" href="/css/reboot.css">
     <link rel="stylesheet" href="/css/app.css">

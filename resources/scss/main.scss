@@ -1,6 +1,36 @@
 .main{
+  padding: 1vw;
+  &__title{
+    text-align: center;
+  }
+
+  &__paragraphs {
+  }
+
+  &__paragraph {
+  }
+
+  &__formats{
+
+  }
+}
+
+.paragraph {
+  text-align: justify;
+  font-size: 1.2em;
+
+  &__strong{
+
+  }
+}
+
+.formats{
 
   &__title{
+    text-align: center;
+  }
+
+  &__paragraph {
 
   }
 }
