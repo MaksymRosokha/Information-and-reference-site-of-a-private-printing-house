@@ -1,9 +1,5 @@
 @extends('layouts.app')
 
-@section('title')
-    Інформаційно-довідковий сайт приватної друкарні
-@endsection
-
 @section('styles')
     <link rel="stylesheet" href="/css/main.css">
 @endsection
@@ -14,7 +10,7 @@
 
 @section('content')
     <main class="main">
-        <h2 class="main__title">Інформаційно-довідковий сайт приватної друкарні</h2>
+        <h2 class="main__title">Скарбничка нотаріуса. Видавництво ІВА</h2>
         <div class="main__paragraphs">
             <p class="main__paragraph paragraph">
                 <strong class="paragraph__strong">Приватна друкарня</strong> - це компанія, яка надає послуги з
