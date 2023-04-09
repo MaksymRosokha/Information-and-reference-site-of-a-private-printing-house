@@ -1,36 +1,94 @@
-.main{
+.main {
   padding: 1vw;
-  &__title{
-    text-align: center;
+
+  &__title {
+
   }
 
-  &__paragraphs {
+  &__about-company {
   }
 
   &__paragraph {
   }
 
-  &__formats{
+  &__printing-services {
 
   }
+}
+
+.about-company {
+
+  &__title {
+
+  }
+
+  &__paragraph {
+  }
+
 }
 
 .paragraph {
   text-align: justify;
   font-size: 1.2em;
 
-  &__strong{
+  &__strong {
 
   }
 }
 
-.formats{
+.title {
+  text-align: center;
+}
 
-  &__title{
-    text-align: center;
+
+.printing-services {
+
+  &__title {
   }
 
-  &__paragraph {
+  &__list-of-services {
 
+  }
+
+  &__service {
+    margin: 1vw;
+  }
+}
+
+.list-of-services {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 10px;
+  grid-row-gap: 10px;
+  width: 100%;
+  padding: 1vw;
+  list-style-type: none;
+
+  @media (max-width: 850px) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @media (max-width: 550px) {
+    grid-template-columns: repeat(1, 1fr);
+  }
+}
+
+.service {
+  width: 250px;
+  height: fit-content;
+  border-radius: 10px;
+  overflow: hidden;
+  place-self: center;
+
+  &:hover {
+    transition: box-shadow .2s;
+    box-shadow: 0 2px 10px 1px black;
+  }
+
+  &__link {
+  }
+
+  &__image {
+    width: 100%;
   }
 }

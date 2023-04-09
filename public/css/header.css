@@ -1,11 +1,11 @@
 .header {
-  background: linear-gradient(90deg, rgb(140, 0, 255) 0%, rgb(44, 51, 222) 35%, rgb(132, 0, 255) 100%);
+  background: linear-gradient(90deg, #dc3545 0%, rgb(255, 0, 0) 35%, #dc3545 100%);
   border-bottom-left-radius: 15px;
   border-bottom-right-radius: 15px;
   display: flex;
   justify-content: center;
   padding: 0.5vw;
-  box-shadow: 0 0 5px 2px #2f0077;
+  box-shadow: 0 0 5px 2px #9a0000;
 }
 .header__wrapper {
   max-width: 1440px;
