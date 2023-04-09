@@ -9,9 +9,9 @@
 @endsection
 
 @section('content')
-    <main class="main">
+    <section class="main">
         <h2 class="main__title">Скарбничка нотаріуса. Видавництво ІВА</h2>
-        <div class="main__paragraphs">
+        <article class="main__paragraphs">
             <p class="main__paragraph paragraph">
                 <strong class="paragraph__strong">Приватна друкарня</strong> - це компанія, яка надає послуги з
                 друкування різноманітної
@@ -45,14 +45,9 @@
                 кваліфіковані фахівці, які дбайливо виконують кожне замовлення з урахуванням всіх вимог клієнта та
                 стандартів якості.
             </p>
+        </article>
+        <div class="main__everything-for-notary everything-for-notary">
+            <h3 class="everything-for-notary__title">Поліграфічні послуги</h3>
         </div>
-        <div class="main__formats formats">
-            <h3 class="formats__title">Шаблони для дизайну</h3>
-            <p class="formats__paragraph paragraph">
-                Тепер створювати дизайн стало набагато простіше, за допомогою наших шаблонів. Ми підготували заготовки,
-                які ти можеш завантажити і використати, коли будеш створювати макет. Обери розмір, який найкраще
-                підходить під твою задумку і завантажуй. Вуаля! Тепер у тебе буде макет згідно вимог до друку:)
-            </p>
-        </div>
-    </main>
+    </section>
 @endsection
