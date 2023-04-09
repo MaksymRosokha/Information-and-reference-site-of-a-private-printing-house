@@ -15,6 +15,7 @@ return new class extends Migration
             $table->id();
             $table->string('name', 100);
             $table->string('image', 300)->default('default/defaultServiceImage.png');
+            $table->string('type', 20)->default('printing service');
             $table->timestamps();
         });
     }

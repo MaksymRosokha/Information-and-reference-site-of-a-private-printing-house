@@ -2,7 +2,7 @@
   padding: 1vw;
 
   &__title {
-
+    font-weight: 700;
   }
 
   &__about-company {
@@ -12,6 +12,10 @@
   }
 
   &__printing-services {
+
+  }
+
+  &__everything_for_notary{
 
   }
 }
@@ -37,11 +41,26 @@
 }
 
 .title {
+  color: #c90303;
   text-align: center;
 }
 
 
 .printing-services {
+
+  &__title {
+  }
+
+  &__list-of-services {
+
+  }
+
+  &__service {
+    margin: 1vw;
+  }
+}
+
+.everything_for_notary {
 
   &__title {
   }

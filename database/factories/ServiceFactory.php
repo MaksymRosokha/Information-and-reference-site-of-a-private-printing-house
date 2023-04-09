@@ -18,7 +18,8 @@ class ServiceFactory extends Factory
     {
         return [
             'name' => fake()->jobTitle(),
-            'image' => "default/defaultServiceImage.png"
+            'image' => "default/defaultServiceImage.png",
+            'type' => 'printing service',
         ];
     }
 }

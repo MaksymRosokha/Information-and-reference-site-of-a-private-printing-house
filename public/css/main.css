@@ -1,15 +1,23 @@
 .main {
   padding: 1vw;
 }
+.main__title {
+  font-weight: 700;
+}
 .paragraph {
   text-align: justify;
   font-size: 1.2em;
 }
 .title {
+  color: #c90303;
   text-align: center;
 }
 
 .printing-services__service {
+  margin: 1vw;
+}
+
+.everything_for_notary__service {
   margin: 1vw;
 }
 

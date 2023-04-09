@@ -51,10 +51,26 @@
         <section class="main__printing-services printing-services">
             <h3 class="printing-services__title title">Поліграфічні послуги</h3>
             <ol class="printing-services__list-of-services list-of-services">
-                @foreach($services as $service)
+                @foreach($printing_services as $service)
+                    <li class="printing-services__service service">
+                        <a href="#" class="service__link">
+                            <img src="/storage/images/services/{{$service->image}}"
+                                 alt="Зображення послуги {{ $service->name }}"
+                                 class="service__image">
+                        </a>
+                    </li>
+                @endforeach
+            </ol>
+        </section>
+        <section class="main__everything_for_notary everything_for_notary">
+            <h3 class="everything_for_notary__title title">Все для нотаріата</h3>
+            <ol class="everything_for_notary__list-of-services list-of-services">
+                @foreach($notaries as $notary)
                     <li class="everything-for-notary__service service">
                         <a href="#" class="service__link">
-                            <img src="/storage/images/services/{{$service->image}}" alt="Зображення послуги {{ $service->name }}" class="service__image">
+                            <img src="/storage/images/services/{{ $service->image }}"
+                                 alt="Зображення послуги {{ $service->name }}"
+                                 class="service__image">
                         </a>
                     </li>
                 @endforeach
