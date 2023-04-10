@@ -2,7 +2,6 @@
   padding: 1vw;
 
   &__title {
-    font-weight: 700;
   }
 
   &__about-company {
@@ -17,6 +16,12 @@
 
   &__everything_for_notary{
 
+  }
+
+  &__section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -41,8 +46,14 @@
 }
 
 .title {
-  color: #c90303;
+  width: fit-content;
+  background-color: red;
+  color: #ffffff;
   text-align: center;
+  padding: 1vw;
+  border-radius: 15px;
+  font-weight: 700;
+  box-shadow: 0 0 3px 0 #620000;
 }
 
 

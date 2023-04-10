@@ -10,8 +10,8 @@
 
 @section('content')
     <section class="main">
-        <h2 class="main__title title">Скарбничка нотаріуса. Видавництво ІВА</h2>
-        <article class="main__about-company about-company">
+        <h2 class="main__title title visibility-hidden">Скарбничка нотаріуса. Видавництво ІВА</h2>
+        <article class="main__about-company about-company main__section">
             <h3 class="about-company__title title">Про компанію</h3>
 
             <p class="about-company__paragraph paragraph">
@@ -48,7 +48,7 @@
                 стандартів якості.
             </p>
         </article>
-        <section class="main__printing-services printing-services">
+        <section class="main__printing-services printing-services main__section">
             <h3 class="printing-services__title title">Поліграфічні послуги</h3>
             <ol class="printing-services__list-of-services list-of-services">
                 @foreach($printing_services as $service)
@@ -62,7 +62,7 @@
                 @endforeach
             </ol>
         </section>
-        <section class="main__everything_for_notary everything_for_notary">
+        <section class="main__everything_for_notary everything_for_notary main__section">
             <h3 class="everything_for_notary__title title">Все для нотаріата</h3>
             <ol class="everything_for_notary__list-of-services list-of-services">
                 @foreach($notaries as $notary)

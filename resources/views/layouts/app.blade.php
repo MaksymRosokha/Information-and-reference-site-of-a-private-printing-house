@@ -51,6 +51,7 @@
     <link rel="icon" href="/storage/images/logo.png" type="image/icon">
 
     <link rel="stylesheet" href="/css/reboot.css">
+    <link rel="stylesheet" href="/css/helpers.css">
     <link rel="stylesheet" href="/css/app.css">
     <link rel="stylesheet" href="/css/header.css"/>
     <link rel="stylesheet" href="/css/footer.css"/>
