@@ -14,10 +14,10 @@
   align-items: center;
 }
 .header__logo {
-  width: 100vw;
+  width: 100%;
 }
 .header__bottom-logo {
-  width: 100vw;
+  width: 100%;
   height: -moz-fit-content;
   height: fit-content;
   background-image: url("/storage/images/header/header_top-bottom.jpg");
