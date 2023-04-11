@@ -25,6 +25,12 @@
                     <li class="menu__item">
                         <a href="#everything_for_notary" class="menu__link">Все для нотаріата</a>
                     </li>
+                    <li class="menu__item">
+                        <a href="#news" class="menu__link">Новини</a>
+                    </li>
+                    <li class="menu__item">
+                        <a href="#contacts" class="menu__link">Контакти</a>
+                    </li>
                 </ul>
             </aside>
         </div>

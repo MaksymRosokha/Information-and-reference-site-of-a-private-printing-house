@@ -10,9 +10,9 @@
 
 @section('content')
     <section class="main">
-        <h2 class="main__title title visibility-hidden">Скарбничка нотаріуса. Видавництво ІВА</h2>
+        <h1 class="main__title title visibility-hidden">Скарбничка нотаріуса. Видавництво ІВА</h1>
         <article id="about-company" class="main__about-company about-company main__section">
-            <h3 class="about-company__title title">Про компанію</h3>
+            <h2 class="about-company__title title">Про компанію</h2>
 
             <p class="about-company__paragraph paragraph">
                 <strong class="paragraph__strong">Приватна друкарня</strong> - це компанія, яка надає послуги з
@@ -49,7 +49,7 @@
             </p>
         </article>
         <section id="printing-services" class="main__printing-services printing-services main__section">
-            <h3 class="printing-services__title title">Поліграфічні послуги</h3>
+            <h2 class="printing-services__title title">Поліграфічні послуги</h2>
             <ol class="printing-services__list-of-services list-of-services">
                 @foreach($printing_services as $service)
                     <li class="printing-services__service service">
@@ -63,7 +63,7 @@
             </ol>
         </section>
         <section id="everything_for_notary" class="main__everything_for_notary everything_for_notary main__section">
-            <h3 class="everything_for_notary__title title">Все для нотаріата</h3>
+            <h2 class="everything_for_notary__title title">Все для нотаріата</h2>
             <ol class="everything_for_notary__list-of-services list-of-services">
                 @foreach($notaries as $notary)
                     <li class="everything-for-notary__service service">
@@ -75,6 +75,42 @@
                     </li>
                 @endforeach
             </ol>
+        </section>
+        <section id="news" class="main__news news main__section">
+            <h2 class="news__title title">Новини</h2>
+            <ul class="news__list-of-posts list-of-posts">
+                @foreach($posts as $post)
+                    <li class="list-of-posts__post post">
+                        <img src="/storage/images/posts/{{ $post->image }}"
+                             alt="Зображення поста {{ $post->title }}"
+                             class="post__image">
+                        <h4 class="post__title">{{ $post->title }}</h4>
+                        <p class="post__text">{{ $post->content }}</p>
+                    </li>
+                @endforeach
+            </ul>
+        </section>
+        <section id="contacts" class="main__contacts contacts main__section">
+            <h2 class="contacts__title title">Контакти</h2>
+            <div class="contacts__info">
+                <iframe class="contacts__map"
+                        src="https://maps.google.com/maps?q=48.61569837155951,22.27877601782837&hl=uk&z=14&output=embed"></iframe>
+                <dl class="contacts__texts">
+                    <dt class="contacts__definition">Адрес:</dt>
+                    <dd class="contacts__content-of-definition">
+                        <address class="contacts__address">м. Ужгород, вул. Капушанська, 82 А</address>
+                    </dd>
+                    <dt class="contacts__definition">Номери телефону:</dt>
+                    <dd class="contacts__content-of-definition">
+                        <a class="contacts__link" href="tel:380508696851">+380508696851</a>
+                        <a class="contacts__link" href="tel:380673001999">+380673001999</a>
+                    </dd>
+                    <dt class="contacts__definition">Електронна пошта:</dt>
+                    <dd class="contacts__content-of-definition">
+                        <a class="contacts__link" href="mailto: print.pruvat@gmail.com">print.pruvat@gmail.com</a>
+                    </dd>
+                </dl>
+            </div>
         </section>
     </section>
 @endsection
