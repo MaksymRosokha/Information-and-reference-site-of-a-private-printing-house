@@ -14,3 +14,5 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [\App\Http\Controllers\MainController::class, 'showMainPage'])->name('main');
+
+Route::get('/service/{id}', [\App\Http\Controllers\ServiceController::class, 'showServicePage'])->name('service');
