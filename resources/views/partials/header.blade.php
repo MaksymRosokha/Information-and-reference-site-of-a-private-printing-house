@@ -17,19 +17,19 @@
             <aside class="header__menu menu">
                 <ul class="menu__list">
                     <li class="menu__item">
-                        <a href="#about-company" class="menu__link">Про компанію</a>
+                        <a href="{{ route('main') }}#about-company" class="menu__link">Про компанію</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#printing-services" class="menu__link">Поліграфічні послуги</a>
+                        <a href="{{ route('main') }}#printing-services" class="menu__link">Поліграфічні послуги</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#everything_for_notary" class="menu__link">Все для нотаріата</a>
+                        <a href="{{ route('main') }}#everything_for_notary" class="menu__link">Все для нотаріата</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#news" class="menu__link">Новини</a>
+                        <a href="{{ route('main') }}#news" class="menu__link">Новини</a>
                     </li>
                     <li class="menu__item">
-                        <a href="#contacts" class="menu__link">Контакти</a>
+                        <a href="{{ route('main') }}#contacts" class="menu__link">Контакти</a>
                     </li>
                 </ul>
             </aside>
