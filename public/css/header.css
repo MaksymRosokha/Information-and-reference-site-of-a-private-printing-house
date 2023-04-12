@@ -17,6 +17,11 @@
 .header__logo {
   width: 100%;
 }
+@media (min-width: 2200px) {
+  .header__logo {
+    width: 100vw;
+  }
+}
 .header__bottom-logo {
   width: 100%;
   height: -moz-fit-content;
@@ -77,6 +82,7 @@
 @media (max-width: 600px) {
   .menu__item {
     width: 100%;
+    margin: 1vw 0 1vw 0;
   }
 }
 .menu__link {
