@@ -2128,6 +2128,32 @@ module.exports = Array.isArray || function (arr) {
 
 /***/ }),
 
+/***/ "./resources/scss/main.scss":
+/*!**********************************!*\
+  !*** ./resources/scss/main.scss ***!
+  \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/scss/service.scss":
+/*!*************************************!*\
+  !*** ./resources/scss/service.scss ***!
+  \*************************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
 /***/ "./resources/css/helpers.css":
 /*!***********************************!*\
   !*** ./resources/css/helpers.css ***!
@@ -2145,6 +2171,19 @@ __webpack_require__.r(__webpack_exports__);
 /*!**********************************!*\
   !*** ./resources/css/reboot.css ***!
   \**********************************/
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+// extracted by mini-css-extract-plugin
+
+
+/***/ }),
+
+/***/ "./resources/scss/admin.scss":
+/*!***********************************!*\
+  !*** ./resources/scss/admin.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -2193,23 +2232,10 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/scss/main.scss":
-/*!**********************************!*\
-  !*** ./resources/scss/main.scss ***!
-  \**********************************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-// extracted by mini-css-extract-plugin
-
-
-/***/ }),
-
-/***/ "./resources/scss/service.scss":
-/*!*************************************!*\
-  !*** ./resources/scss/service.scss ***!
-  \*************************************/
+/***/ "./resources/scss/login.scss":
+/*!***********************************!*\
+  !*** ./resources/scss/login.scss ***!
+  \***********************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
 "use strict";
@@ -6389,13 +6415,15 @@ const toJSONObject = (obj) => {
 /******/ 		// [resolve, reject, Promise] = chunk loading, 0 = chunk loaded
 /******/ 		var installedChunks = {
 /******/ 			"/js/app": 0,
-/******/ 			"css/service": 0,
-/******/ 			"css/main": 0,
+/******/ 			"css/login": 0,
 /******/ 			"css/header": 0,
 /******/ 			"css/footer": 0,
 /******/ 			"css/app": 0,
+/******/ 			"css/admin": 0,
 /******/ 			"css/reboot": 0,
-/******/ 			"css/helpers": 0
+/******/ 			"css/helpers": 0,
+/******/ 			"css/service": 0,
+/******/ 			"css/main": 0
 /******/ 		};
 /******/ 		
 /******/ 		// no chunk on demand loading
@@ -6445,14 +6473,16 @@ const toJSONObject = (obj) => {
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module depends on other loaded chunks and execution need to be delayed
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/js/app.js")))
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/scss/app.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/scss/footer.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/scss/header.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/scss/main.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/scss/service.scss")))
-/******/ 	__webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/css/helpers.css")))
-/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/service","css/main","css/header","css/footer","css/app","css/reboot","css/helpers"], () => (__webpack_require__("./resources/css/reboot.css")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/js/app.js")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/admin.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/app.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/footer.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/header.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/login.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/main.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/scss/service.scss")))
+/******/ 	__webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/css/helpers.css")))
+/******/ 	var __webpack_exports__ = __webpack_require__.O(undefined, ["css/login","css/header","css/footer","css/app","css/admin","css/reboot","css/helpers","css/service","css/main"], () => (__webpack_require__("./resources/css/reboot.css")))
 /******/ 	__webpack_exports__ = __webpack_require__.O(__webpack_exports__);
 /******/ 	
 /******/ })()
