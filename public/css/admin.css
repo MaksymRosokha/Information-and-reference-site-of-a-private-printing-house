@@ -25,6 +25,7 @@
   width: 30%;
   text-align: center;
   border-radius: 7px;
+  font-size: 1.2em;
 }
 .admin__logout:hover {
   background-color: #4b5569;
@@ -41,25 +42,35 @@
   border-radius: 20px;
   box-shadow: 0 0 5px 1px #cb5b00;
 }
-.opportunities__button {
+.list-of-opportunities {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+.list-of-opportunities__block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   margin: 1vw;
 }
-
-.table-of-opportunities {
-  width: 100%;
+.list-of-opportunities__title {
+  text-align: center;
+  color: white;
+  font-size: 1.2em;
 }
-.table-of-opportunities__row {
+.list-of-opportunities__button {
+  margin: 1vw;
+}
+.list-of-opportunities__row {
   width: 100%;
   display: flex;
   justify-content: space-around;
 }
-.table-of-opportunities__column {
+.list-of-opportunities__column {
   display: flex;
   justify-content: center;
   width: 100%;
-}
-.table-of-opportunities__column--title {
-  text-align: center;
-  color: white;
-  font-size: 1.2em;
 }

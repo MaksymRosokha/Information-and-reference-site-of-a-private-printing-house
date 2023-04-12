@@ -29,6 +29,7 @@
     width: 30%;
     text-align: center;
     border-radius: 7px;
+    font-size: 1.2em;
 
     &:hover {
       background-color: #4b5569;
@@ -49,19 +50,42 @@
   border-radius: 20px;
   box-shadow: 0 0 5px 1px #cb5b00;
 
-  // .opportunities__table-of-opportunities
+  // .opportunities__list-of-opportunities
 
-  &__table-of-opportunities {
+  &__list-of-opportunities {
   }
+}
+.list-of-opportunities {
+  width: 100%;
+  padding: 0;
+  list-style-type: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+
+  // .list-of-opportunities__block
+
+  &__block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1vw;
+  }
+
+  // .list-of-opportunities__title
+
+  &__title {
+    text-align: center;
+    color: white;
+    font-size: 1.2em;
+  }
+
+  // .list-of-opportunities__button
 
   &__button {
     margin: 1vw;
   }
-}
-.table-of-opportunities {
-  width: 100%;
 
-  // .table-of-opportunities__row
 
   &__row {
     width: 100%;
@@ -69,34 +93,11 @@
     justify-content: space-around;
   }
 
-  // .table-of-opportunities__column
-
   &__column {
     display: flex;
     justify-content: center;
     width: 100%;
   }
-
-  // .table-of-opportunities__column--title
-
-  &__column--title {
-    text-align: center;
-    color: white;
-    font-size: 1.2em;
-  }
-
-  // .table-of-opportunities__column--create
-
-  &__column--create {
-  }
-
-  // .table-of-opportunities__column--update
-
-  &__column--update {
-  }
-
-  // .table-of-opportunities__column--delete
-
-  &__column--delete {
-  }
 }
+
+
