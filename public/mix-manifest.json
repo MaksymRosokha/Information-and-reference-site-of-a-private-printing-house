@@ -1,7 +1,6 @@
 {
     "/js/app.js": "/js/app.js",
     "/js/bootstrap.js": "/js/bootstrap.js",
-    "/css/login.css": "/css/login.css",
     "/css/header.css": "/css/header.css",
     "/css/footer.css": "/css/footer.css",
     "/css/app.css": "/css/app.css",
@@ -9,5 +8,6 @@
     "/css/reboot.css": "/css/reboot.css",
     "/css/helpers.css": "/css/helpers.css",
     "/css/service.css": "/css/service.css",
-    "/css/main.css": "/css/main.css"
+    "/css/main.css": "/css/main.css",
+    "/css/login.css": "/css/login.css"
 }

@@ -56,11 +56,13 @@
     <link rel="stylesheet" href="/css/header.css"/>
     <link rel="stylesheet" href="/css/footer.css"/>
     @yield('styles')
+
+    <script src="/js/app.js" defer></script>
     @yield('scripts')
 </head>
 <body>
 
-<div id="wrapper">
+<div id="app" class="wrapper">
     <header id="header">
         @include('partials.header')
     </header>

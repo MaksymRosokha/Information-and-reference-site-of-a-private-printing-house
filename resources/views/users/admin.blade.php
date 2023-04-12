@@ -19,19 +19,64 @@
                     <th class="table-of-opportunities__column table-of-opportunities__column--title">Новини</th>
                 </tr>
                 <tr class="table-of-opportunities__row">
-                    <td class="table-of-opportunities__column table-of-opportunities__column--create">Створити</td>
-                    <td class="table-of-opportunities__column table-of-opportunities__column--create">Створити</td>
-                    <td class="table-of-opportunities__column table-of-opportunities__column--create">Створити</td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--create">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Створити послугу">
+
+                        </button-with-modal-window>
+                    </td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--create">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Створити продукт">
+
+                        </button-with-modal-window>
+                    </td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--create">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Створити пост">
+
+                        </button-with-modal-window>
+                    </td>
                 </tr>
                 <tr class="table-of-opportunities__row">
-                    <td class="table-of-opportunities__column table-of-opportunities__column--update">Редагувати</td>
-                    <td class="table-of-opportunities__column table-of-opportunities__column--update">Редагувати</td>
-                    <td class="table-of-opportunities__column table-of-opportunities__column--update">Редагувати</td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--update">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Редагувати послугу">
+
+                        </button-with-modal-window>
+                    </td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--update">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Редагувати продукт">
+
+                        </button-with-modal-window>
+                    </td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--update">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Редагувати пост">
+
+                        </button-with-modal-window>
+                    </td>
                 </tr>
                 <tr class="table-of-opportunities__row">
-                    <td class="table-of-opportunities__column table-of-opportunities__column--delete">Видалити</td>
-                    <td class="table-of-opportunities__column table-of-opportunities__column--delete">Видалити</td>
-                    <td class="table-of-opportunities__column table-of-opportunities__column--delete">Видалити</td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--delete">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Видалити послугу">
+
+                        </button-with-modal-window>
+                    </td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--delete">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Видалити продукт">
+
+                        </button-with-modal-window>
+                    </td>
+                    <td class="table-of-opportunities__column table-of-opportunities__column--delete">
+                        <button-with-modal-window class="opportunities__button"
+                                                  button-text="Видалити пост">
+
+                        </button-with-modal-window>
+                    </td>
                 </tr>
             </table>
         </section>

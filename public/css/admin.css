@@ -37,10 +37,14 @@
 .opportunities {
   padding: 2vw;
   width: 100%;
-  background-color: #f16b00;
+  background-color: #ff8e34;
   border-radius: 20px;
   box-shadow: 0 0 5px 1px #cb5b00;
 }
+.opportunities__button {
+  margin: 1vw;
+}
+
 .table-of-opportunities {
   width: 100%;
 }
@@ -57,4 +61,5 @@
 .table-of-opportunities__column--title {
   text-align: center;
   color: white;
+  font-size: 1.2em;
 }
