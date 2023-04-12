@@ -15,7 +15,7 @@
   align-items: center;
 }
 .header__logo {
-  width: 100vw;
+  width: 100%;
 }
 .header__bottom-logo {
   width: 100%;

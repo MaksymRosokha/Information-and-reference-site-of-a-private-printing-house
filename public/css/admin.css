@@ -1,1 +1,60 @@
+.admin {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2vw;
+}
+.admin__title {
+  width: -moz-fit-content;
+  width: fit-content;
+  background-color: red;
+  color: #ffffff;
+  text-align: center;
+  padding: 15px;
+  border-radius: 15px;
+  font-weight: 700;
+  font-size: 1.5em;
+  box-shadow: 0 0 3px 0 #620000;
+}
+.admin__logout {
+  background-color: #162939;
+  color: white;
+  text-decoration: none;
+  transition: background-color 0.5s;
+  width: 30%;
+  text-align: center;
+  border-radius: 7px;
+}
+.admin__logout:hover {
+  background-color: #4b5569;
+  color: white;
+}
+.admin__opportunities {
+  margin: 3vw 0 3vw 0;
+}
 
+.opportunities {
+  padding: 2vw;
+  width: 100%;
+  background-color: #f16b00;
+  border-radius: 20px;
+  box-shadow: 0 0 5px 1px #cb5b00;
+}
+.table-of-opportunities {
+  width: 100%;
+}
+.table-of-opportunities__row {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+.table-of-opportunities__column {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+.table-of-opportunities__column--title {
+  text-align: center;
+  color: white;
+}
