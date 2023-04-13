@@ -33,7 +33,7 @@
     <button class="service-creator__submit" type="submit">Створити</button>
 
     <success-or-fail-modal-window
-        class="password-changer__result-window result-window"
+        class="service-creator__result-window result-window"
         v-if="result.isVisible"
         @close-modal-window="closeResultWindow"
         :text="this.result.text"
@@ -95,6 +95,8 @@ export default {
             this.result.text = "Послуга успішно створена";
             this.result.type = "success";
             this.result.isVisible = true;
+            this.name = '';
+            this.$refs.imageInput.value = null;
           })
           .catch(error => {
             if (error.response && error.response.data && error.response.data.errors) {
@@ -177,6 +179,29 @@ export default {
       background-color: #4b5569;
       color: white;
     }
+  }
+
+  // .service-creator__result-window
+
+  &__result-window {
+  }
+}
+
+.result-window {
+
+  // .result-window__errors
+
+  &__errors {
+  }
+
+  // .result-window__list-of-errors
+
+  &__list-of-errors {
+  }
+
+  // .result-window__error
+
+  &__error {
   }
 }
 </style>
