@@ -23,4 +23,25 @@ Route::post('/login', [\App\Http\Controllers\AuthController::class, 'doLogIn'])-
 Route::middleware('admin')->prefix('admin')->group(function () {
     Route::get('/', [\App\Http\Controllers\AdminController::class, 'showAdminPage'])->name('admin');
     Route::get('/logout', [\App\Http\Controllers\AuthController::class, 'doLogOut'])->name('logout');
+
+    Route::post('/create_service', [\App\Http\Controllers\AdminController::class, 'createService'])
+        ->name('create_service');
+    Route::post('/update_service', [\App\Http\Controllers\AdminController::class, 'updateService'])
+        ->name('update_service');
+    Route::post('/delete_service', [\App\Http\Controllers\AdminController::class, 'deleteService'])
+        ->name('delete_service');
+
+    Route::post('/create_product', [\App\Http\Controllers\AdminController::class, 'createProduct'])
+        ->name('create_product');
+    Route::post('/update_product', [\App\Http\Controllers\AdminController::class, 'updateProduct'])
+        ->name('update_product');
+    Route::post('/delete_product', [\App\Http\Controllers\AdminController::class, 'deleteProduct'])
+        ->name('delete_product');
+
+    Route::post('/create_post', [\App\Http\Controllers\AdminController::class, 'createPost'])
+        ->name('create_post');
+    Route::post('/update_post', [\App\Http\Controllers\AdminController::class, 'updatePost'])
+        ->name('update_post');
+    Route::post('/delete_post', [\App\Http\Controllers\AdminController::class, 'deletePost'])
+        ->name('delete_post');
 });

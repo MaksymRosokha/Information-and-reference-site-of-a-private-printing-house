@@ -47,6 +47,8 @@
           Журнали обліку, бланки,Прошивка курсових, дипломних робіт">
     <meta itemprop="image" content="/storage/images/logo.png">
 
+    <meta name="csrf-token" content="{{ csrf_token() }}">
+
     <title>Доступні реєстри за новою формою. - Скарбничка нотаріуса. Видавництво ІВА. @yield('title')</title>
     <link rel="icon" href="/storage/images/logo.png" type="image/icon">
 

@@ -6,6 +6,7 @@
 import './bootstrap';
 import { createApp } from 'vue';
 import components from "./components/UI/index";
+import adminComponents from "./components/admin/index";
 // /**
 //  * Next, we will create a fresh Vue application instance. You may then begin
 //  * registering components with the application instance so they are ready
@@ -14,6 +15,9 @@ import components from "./components/UI/index";
 //
 const app = createApp({});
 components.forEach(component => {
+    app.component(component.name, component);
+});
+adminComponents.forEach(component => {
     app.component(component.name, component);
 });
 /**

@@ -67,9 +67,9 @@
             <ol class="everything_for_notary__list-of-services list-of-services">
                 @foreach($notaries as $notary)
                     <li class="everything-for-notary__service service">
-                        <a href="{{ route('service', ['id' => $service->id]) }}" class="service__link">
-                            <img src="/storage/images/services/{{ $service->image }}"
-                                 alt="Зображення послуги {{ $service->name }}"
+                        <a href="{{ route('service', ['id' => $notary->id]) }}" class="service__link">
+                            <img src="/storage/images/services/{{ $notary->image }}"
+                                 alt="Зображення послуги {{ $notary->name }}"
                                  class="service__image">
                         </a>
                     </li>

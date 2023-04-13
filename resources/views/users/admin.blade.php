@@ -9,7 +9,7 @@
 @endsection
 
 @section('content')
-    <section class="admin">
+    <section id="admin" class="admin">
         <h2 class="admin__title">Адміністративна панель</h2>
         <section class="admin__opportunities opportunities">
             <ul class="opportunities__list-of-opportunities list-of-opportunities">
@@ -17,7 +17,7 @@
                     <strong class="list-of-opportunities__title">Послуги</strong>
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Створити послугу">
-
+                        <service-creator link="{{ route('create_service') }}"></service-creator>
                     </button-with-modal-window>
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати послугу">
