@@ -33,7 +33,9 @@
 
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Створити продукт">
-
+                        <product-creator link="{{ route('create_product') }}"
+                                         :services="{{ json_encode($services) }}">
+                        </product-creator>
                     </button-with-modal-window>
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати продукт">

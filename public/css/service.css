@@ -35,6 +35,7 @@
 }
 .table-of-products__column--image {
   width: 30%;
+  padding: 1vw;
 }
 .table-of-products__column--name {
   width: 50%;
