@@ -42,6 +42,8 @@
 }
 .table-of-products__column--price {
   width: 20%;
+  text-align: end;
+  padding: 1vw;
 }
 .product {
   width: 100%;
@@ -66,4 +68,7 @@
 }
 .product__name {
   word-break: break-word;
+}
+.product__prise {
+  color: red;
 }
