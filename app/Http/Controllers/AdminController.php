@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CreatePostRequest;
 use App\Http\Requests\CreateProductRequest;
 use App\Http\Requests\CreateServiceRequest;
 use App\Models\Post;
@@ -81,8 +82,24 @@ class AdminController extends Controller
     {
     }
 
-    public function createPost()
+    public function createPost(CreatePostRequest $request)
     {
+        $data = $request->validated();
+        if ($request->hasFile('image')) {
+            $image = $this->moveImageToStorage(
+                imageData: $request->file('image'),
+                pathToFolder: AdminController::PATH_TO_POST_IMAGES
+            );
+        } else {
+            $image = AdminController::DEFAULT_POST_IMAGE;
+        }
+
+        $post = array("title"=>$data['title'],
+            "image"=>$image,
+            "content"=>$data['content'],
+            'created_at' => date('Y-m-d H.i.s'),
+            'updated_at' => date('Y-m-d H.i.s'));
+        DB::table('posts')->insert($post);
     }
 
     public function updatePost()

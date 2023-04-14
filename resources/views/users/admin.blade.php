@@ -50,7 +50,7 @@
                     <strong class="list-of-opportunities__title">Новини</strong>
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Створити пост">
-
+                        <post-creator link="{{ route('create_post') }}"></post-creator>
                     </button-with-modal-window>
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати пост">
