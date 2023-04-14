@@ -24,6 +24,7 @@
            v-model="price"
            class="product-creator__input-field product-creator__input-field--number"
            type="number"
+           step="0.01"
            name="price"
            required>
 

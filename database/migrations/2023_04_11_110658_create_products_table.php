@@ -16,7 +16,7 @@ return new class extends Migration
             $table->foreignId('service_id')->constrained()->cascadeOnUpdate()->cascadeOnDelete();
             $table->string('name', 300);
             $table->string('image', 300)->nullable()->default('default/defaultProduct.png');
-            $table->integer('price');
+            $table->float('price');
             $table->timestamps();
         });
     }

@@ -18133,6 +18133,7 @@ function render(_ctx, _cache, $props, $setup, $data, $options) {
     }),
     "class": "product-creator__input-field product-creator__input-field--number",
     type: "number",
+    step: "0.01",
     name: "price",
     required: ""
   }, null, 512 /* NEED_PATCH */), [[vue__WEBPACK_IMPORTED_MODULE_0__.vModelText, $data.price]]), _hoisted_6, (0,vue__WEBPACK_IMPORTED_MODULE_0__.createElementVNode)("input", {
