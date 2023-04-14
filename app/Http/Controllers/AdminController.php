@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreatePostRequest;
-use App\Http\Requests\CreateProductRequest;
-use App\Http\Requests\CreateServiceRequest;
+use App\Http\Requests\PostCRUDRequest;
+use App\Http\Requests\ProductCRUDRequest;
+use App\Http\Requests\ServiceCRUDRequest;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Service;
@@ -31,7 +31,7 @@ class AdminController extends Controller
         ]);
     }
 
-    public function createService(CreateServiceRequest $request)
+    public function createService(ServiceCRUDRequest $request)
     {
         $data = $request->validated();
         if ($request->hasFile('image')) {
@@ -50,15 +50,19 @@ class AdminController extends Controller
         ]);
     }
 
-    public function updateService()
+    public function updateService(ServiceCRUDRequest $request)
     {
+        $data = $request->validated();
+
     }
 
-    public function deleteService()
+    public function deleteService(ServiceCRUDRequest $request)
     {
+        $data = $request->validated();
+
     }
 
-    public function createProduct(CreateProductRequest $request)
+    public function createProduct(ProductCRUDRequest $request)
     {
         $data = $request->validated();
         if ($request->hasFile('image')) {
@@ -74,15 +78,19 @@ class AdminController extends Controller
         DB::table('products')->insert($product);
     }
 
-    public function updateProduct()
+    public function updateProduct(ProductCRUDRequest $request)
     {
+        $data = $request->validated();
+
     }
 
-    public function deleteProduct()
+    public function deleteProduct(ProductCRUDRequest $request)
     {
+        $data = $request->validated();
+
     }
 
-    public function createPost(CreatePostRequest $request)
+    public function createPost(PostCRUDRequest $request)
     {
         $data = $request->validated();
         if ($request->hasFile('image')) {
@@ -102,12 +110,16 @@ class AdminController extends Controller
         DB::table('posts')->insert($post);
     }
 
-    public function updatePost()
+    public function updatePost(PostCRUDRequest $request)
     {
+        $data = $request->validated();
+
     }
 
-    public function deletePost()
+    public function deletePost(PostCRUDRequest $request)
     {
+        $data = $request->validated();
+
     }
 
     private function moveImageToStorage($imageData, string $pathToFolder): string
