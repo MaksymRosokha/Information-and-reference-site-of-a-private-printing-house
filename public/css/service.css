@@ -50,8 +50,19 @@
 }
 .product__image {
   max-width: 300px;
-  max-height: 300px;
-  width: 100%;
+  max-height: 400px;
+  height: 100%;
+}
+@media (min-width: 1700px) {
+  .product__image {
+    max-width: 500px;
+    max-height: 600px;
+  }
+}
+@media (max-width: 600px) {
+  .product__image {
+    max-width: 150px;
+  }
 }
 .product__name {
   word-break: break-word;
