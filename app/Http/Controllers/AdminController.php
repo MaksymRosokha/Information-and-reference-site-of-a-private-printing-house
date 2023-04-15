@@ -155,6 +155,25 @@ class AdminController extends Controller
     public function updatePost(PostCRUDRequest $request)
     {
         $data = $request->validated();
+        $post = Post::whereId($data['postID'])->firstOrFail();
+        $image = $post->image;
+
+        if ($request->hasFile('image')) {
+            if (Storage::exists('public/images/posts/' . $post->image)
+                && $image !== 'default/defaultNews.jpg') {
+                Storage::delete('public/images/posts/' . $post->image);
+            }
+            $image = $this->moveImageToStorage(
+                imageData: $request->file('image'),
+                pathToFolder: AdminController::PATH_TO_POST_IMAGES
+            );
+        }
+
+        $post->update([
+            'title' => $data['title'],
+            'content' => $data['content'],
+            'image' => $image,
+        ]);
     }
 
     public function deletePost(PostCRUDRequest $request)

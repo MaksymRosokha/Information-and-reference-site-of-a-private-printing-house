@@ -7,6 +7,7 @@
            class="post-creator__input-field post-creator__input-field--text"
            type="text"
            name="title"
+           maxlength="200"
            required>
 
     <label class="post-creator__label" for="image">Картинка: </label>
@@ -18,7 +19,7 @@
            accept="image/*"
            @change="setImage">
 
-    <label class="post-creator__label" for="type">Заголовок: </label>
+    <label class="post-creator__label" for="type">Вміст: </label>
     <textarea v-model="content"
               id="type"
               class="post-creator__input-field post-creator__input-field--textarea"
@@ -165,8 +166,8 @@ export default {
   // .post-creator__input-field--textarea
 
   &__input-field--textarea {
-    min-height: 100px;
-    max-height: 200px;
+    height: 100px;
+    resize: none;
   }
 
   // .post-creator__result-window

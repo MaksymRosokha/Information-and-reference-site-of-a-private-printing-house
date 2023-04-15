@@ -64,7 +64,9 @@
 
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати пост">
-                        <post-updater></post-updater>
+                        <post-updater link="{{ route('update_post') }}"
+                                      :posts="{{ json_encode($posts) }}">
+                        </post-updater>
                     </button-with-modal-window>
 
                     <button-with-modal-window class="list-of-opportunities__button"

@@ -23,6 +23,7 @@ class PostCRUDRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'postID' => ['int'],
             'title' => ['required', 'string', 'max:200'],
             'image' => ['nullable', 'image', 'max:10240'],
             'content' => ['required', 'string', 'max:3000'],
