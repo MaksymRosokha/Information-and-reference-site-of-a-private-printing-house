@@ -50,43 +50,6 @@ class AdminController extends Controller
         ]);
     }
 
-    private function moveImageToStorage($imageData, string $pathToFolder): string
-    {
-        $newImageName = $this->generateRandomString(20) .
-            '=' .
-            date('Y-m-d~H.i.s') .
-            '.' .
-            $imageData->getClientOriginalExtension();
-
-        $imageData->move(
-            public_path($pathToFolder),
-            $imageData->getClientOriginalName()
-        );
-        rename(
-            public_path($pathToFolder) . $imageData->getClientOriginalName(),
-            public_path($pathToFolder) . $newImageName
-        );
-
-        return $newImageName;
-    }
-
-    /**
-     * Generates random string.
-     *
-     * @param int $length the length of the string to be generated
-     * @return string generated string
-     */
-    private function generateRandomString(int $length = 10): string
-    {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
-        }
-        return $randomString;
-    }
-
     public function updateService(ServiceCRUDRequest $request)
     {
         $data = $request->validated();
@@ -177,5 +140,42 @@ class AdminController extends Controller
     public function deletePost(PostCRUDRequest $request)
     {
         $data = $request->validated();
+    }
+
+    private function moveImageToStorage($imageData, string $pathToFolder): string
+    {
+        $newImageName = $this->generateRandomString(20) .
+            '=' .
+            date('Y-m-d~H.i.s') .
+            '.' .
+            $imageData->getClientOriginalExtension();
+
+        $imageData->move(
+            public_path($pathToFolder),
+            $imageData->getClientOriginalName()
+        );
+        rename(
+            public_path($pathToFolder) . $imageData->getClientOriginalName(),
+            public_path($pathToFolder) . $newImageName
+        );
+
+        return $newImageName;
+    }
+
+    /**
+     * Generates random string.
+     *
+     * @param int $length the length of the string to be generated
+     * @return string generated string
+     */
+    private function generateRandomString(int $length = 10): string
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 }

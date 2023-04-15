@@ -85,7 +85,7 @@
                              alt="Зображення поста {{ $post->title }}"
                              class="post__image">
                         <h4 class="post__title">{{ $post->title }}</h4>
-                        <p class="post__text">{{ $post->content }}</p>
+                        <pre class="post__text">{{ $post->content }}</pre>
                     </li>
                 @endforeach
             </ul>
