@@ -80,7 +80,15 @@ class AdminController extends Controller
         $request->validate([
             'id' => ['required', 'int'],
         ]);
-        $service = Service::whereId($request['id'])->delete();
+        $service = Service::whereId($request['id']);
+        $image = $service->image;
+
+        if (Storage::exists('public/images/services/' . $service->image)
+            && $image !== 'default/defaultServiceImage.png') {
+            Storage::delete('public/images/services/' . $service->image);
+        }
+
+        $service->delete();
     }
 
     public function createProduct(ProductCRUDRequest $request)
