@@ -76,7 +76,10 @@
 
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Видалити пост">
-                        <post-deleter></post-deleter>
+                        <post-deleter link="{{ route('delete_post') }}"
+                                      :posts="{{ json_encode($posts) }}">
+
+                        </post-deleter>
                     </button-with-modal-window>
                 </li>
             </ul>

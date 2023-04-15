@@ -8,8 +8,8 @@ use App\Http\Requests\ServiceCRUDRequest;
 use App\Models\Post;
 use App\Models\Product;
 use App\Models\Service;
-use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -49,6 +49,43 @@ class AdminController extends Controller
             'type' => $data['type'],
             'image' => $image,
         ]);
+    }
+
+    private function moveImageToStorage($imageData, string $pathToFolder): string
+    {
+        $newImageName = $this->generateRandomString(20) .
+            '=' .
+            date('Y-m-d~H.i.s') .
+            '.' .
+            $imageData->getClientOriginalExtension();
+
+        $imageData->move(
+            public_path($pathToFolder),
+            $imageData->getClientOriginalName()
+        );
+        rename(
+            public_path($pathToFolder) . $imageData->getClientOriginalName(),
+            public_path($pathToFolder) . $newImageName
+        );
+
+        return $newImageName;
+    }
+
+    /**
+     * Generates random string.
+     *
+     * @param int $length the length of the string to be generated
+     * @return string generated string
+     */
+    private function generateRandomString(int $length = 10): string
+    {
+        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
+        $charactersLength = strlen($characters);
+        $randomString = '';
+        for ($i = 0; $i < $length; $i++) {
+            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        }
+        return $randomString;
     }
 
     public function updateService(ServiceCRUDRequest $request)
@@ -201,45 +238,19 @@ class AdminController extends Controller
         ]);
     }
 
-    public function deletePost(PostCRUDRequest $request)
+    public function deletePost(Request $request)
     {
-        $data = $request->validated();
-    }
+        $request->validate([
+            'id' => ['required', 'int'],
+        ]);
+        $post = Post::whereId($request['id'])->firstOrFail();
+        $image = $post->image;
 
-    private function moveImageToStorage($imageData, string $pathToFolder): string
-    {
-        $newImageName = $this->generateRandomString(20) .
-            '=' .
-            date('Y-m-d~H.i.s') .
-            '.' .
-            $imageData->getClientOriginalExtension();
-
-        $imageData->move(
-            public_path($pathToFolder),
-            $imageData->getClientOriginalName()
-        );
-        rename(
-            public_path($pathToFolder) . $imageData->getClientOriginalName(),
-            public_path($pathToFolder) . $newImageName
-        );
-
-        return $newImageName;
-    }
-
-    /**
-     * Generates random string.
-     *
-     * @param int $length the length of the string to be generated
-     * @return string generated string
-     */
-    private function generateRandomString(int $length = 10): string
-    {
-        $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
-        $charactersLength = strlen($characters);
-        $randomString = '';
-        for ($i = 0; $i < $length; $i++) {
-            $randomString .= $characters[rand(0, $charactersLength - 1)];
+        if (Storage::exists('public/images/posts/' . $post->image)
+            && $image !== AdminController::DEFAULT_POST_IMAGE) {
+            Storage::delete('public/images/posts/' . $post->image);
         }
-        return $randomString;
+
+        $post->delete();
     }
 }
