@@ -19,13 +19,17 @@
                                               button-text="Створити послугу">
                         <service-creator link="{{ route('create_service') }}"></service-creator>
                     </button-with-modal-window>
+
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати послугу">
-
+                        <service-updater link="{{ route('update_service') }}"
+                                         :services="{{ json_encode($services) }}">
+                        </service-updater>
                     </button-with-modal-window>
+
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Видалити послугу">
-
+                        <service-deleter></service-deleter>
                     </button-with-modal-window>
                 </li>
                 <li class="list-of-opportunities__block">
@@ -37,13 +41,15 @@
                                          :services="{{ json_encode($services) }}">
                         </product-creator>
                     </button-with-modal-window>
+
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати продукт">
-
+                        <product-updater></product-updater>
                     </button-with-modal-window>
+
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Видалити продукт">
-
+                        <product-deleter></product-deleter>
                     </button-with-modal-window>
                 </li>
                 <li class="list-of-opportunities__block">
@@ -52,13 +58,15 @@
                                               button-text="Створити пост">
                         <post-creator link="{{ route('create_post') }}"></post-creator>
                     </button-with-modal-window>
+
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати пост">
-
+                        <post-updater></post-updater>
                     </button-with-modal-window>
+
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Видалити пост">
-
+                        <post-deleter></post-deleter>
                     </button-with-modal-window>
                 </li>
             </ul>

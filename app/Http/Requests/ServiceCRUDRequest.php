@@ -23,6 +23,7 @@ class ServiceCRUDRequest extends FormRequest
     public function rules(): array
     {
         return [
+            'serviceID' => ['int'],
             'type' => ['required', 'string'],
             'name' => ['required', 'string', 'max:100'],
             'image' => ['nullable', 'image', 'max:10240'],

@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
 {
@@ -20,7 +21,6 @@ class AdminController extends Controller
 
     private const PATH_TO_POST_IMAGES = 'storage/images/posts/';
     private const DEFAULT_POST_IMAGE = 'default/defaultNews.jpg';
-
 
     public function showAdminPage()
     {
@@ -48,78 +48,6 @@ class AdminController extends Controller
             'type' => $data['type'],
             'image' => $image,
         ]);
-    }
-
-    public function updateService(ServiceCRUDRequest $request)
-    {
-        $data = $request->validated();
-
-    }
-
-    public function deleteService(ServiceCRUDRequest $request)
-    {
-        $data = $request->validated();
-
-    }
-
-    public function createProduct(ProductCRUDRequest $request)
-    {
-        $data = $request->validated();
-        if ($request->hasFile('image')) {
-            $image = $this->moveImageToStorage(
-                imageData: $request->file('image'),
-                pathToFolder: AdminController::PATH_TO_PRODUCT_IMAGES
-            );
-        } else {
-            $image = AdminController::DEFAULT_PRODUCT_IMAGE;
-        }
-
-        $product = array('service_id'=>$data['serviceID'],"name"=>$data['name'],"image"=>$image, "price"=>$data['price']);
-        DB::table('products')->insert($product);
-    }
-
-    public function updateProduct(ProductCRUDRequest $request)
-    {
-        $data = $request->validated();
-
-    }
-
-    public function deleteProduct(ProductCRUDRequest $request)
-    {
-        $data = $request->validated();
-
-    }
-
-    public function createPost(PostCRUDRequest $request)
-    {
-        $data = $request->validated();
-        if ($request->hasFile('image')) {
-            $image = $this->moveImageToStorage(
-                imageData: $request->file('image'),
-                pathToFolder: AdminController::PATH_TO_POST_IMAGES
-            );
-        } else {
-            $image = AdminController::DEFAULT_POST_IMAGE;
-        }
-
-        $post = array("title"=>$data['title'],
-            "image"=>$image,
-            "content"=>$data['content'],
-            'created_at' => date('Y-m-d H.i.s'),
-            'updated_at' => date('Y-m-d H.i.s'));
-        DB::table('posts')->insert($post);
-    }
-
-    public function updatePost(PostCRUDRequest $request)
-    {
-        $data = $request->validated();
-
-    }
-
-    public function deletePost(PostCRUDRequest $request)
-    {
-        $data = $request->validated();
-
     }
 
     private function moveImageToStorage($imageData, string $pathToFolder): string
@@ -157,5 +85,97 @@ class AdminController extends Controller
             $randomString .= $characters[rand(0, $charactersLength - 1)];
         }
         return $randomString;
+    }
+
+    public function updateService(ServiceCRUDRequest $request)
+    {
+        $data = $request->validated();
+        $service = Service::whereId($data['serviceID'])->first();
+        $image = $service->image;
+
+        if ($request->hasFile('image')) {
+            if (Storage::exists('public/images/services/' . $service->image)
+                && $image !== 'default/defaultServiceImage.png') {
+                Storage::delete('public/images/services/' . $service->image);
+            }
+            $image = $this->moveImageToStorage(
+                imageData: $request->file('image'),
+                pathToFolder: AdminController::PATH_TO_SERVICE_IMAGES
+            );
+        }
+
+        $service->update([
+            'name' => $data['name'],
+            'type' => $data['type'],
+            'image' => $image,
+        ]);
+    }
+
+    public function deleteService(ServiceCRUDRequest $request)
+    {
+        $data = $request->validated();
+    }
+
+    public function createProduct(ProductCRUDRequest $request)
+    {
+        $data = $request->validated();
+        if ($request->hasFile('image')) {
+            $image = $this->moveImageToStorage(
+                imageData: $request->file('image'),
+                pathToFolder: AdminController::PATH_TO_PRODUCT_IMAGES
+            );
+        } else {
+            $image = AdminController::DEFAULT_PRODUCT_IMAGE;
+        }
+
+        $product = [
+            'service_id' => $data['serviceID'],
+            "name" => $data['name'],
+            "image" => $image,
+            "price" => $data['price'],
+        ];
+        DB::table('products')->insert($product);
+    }
+
+    public function updateProduct(ProductCRUDRequest $request)
+    {
+        $data = $request->validated();
+    }
+
+    public function deleteProduct(ProductCRUDRequest $request)
+    {
+        $data = $request->validated();
+    }
+
+    public function createPost(PostCRUDRequest $request)
+    {
+        $data = $request->validated();
+        if ($request->hasFile('image')) {
+            $image = $this->moveImageToStorage(
+                imageData: $request->file('image'),
+                pathToFolder: AdminController::PATH_TO_POST_IMAGES
+            );
+        } else {
+            $image = AdminController::DEFAULT_POST_IMAGE;
+        }
+
+        $post = [
+            "title" => $data['title'],
+            "image" => $image,
+            "content" => $data['content'],
+            'created_at' => date('Y-m-d H.i.s'),
+            'updated_at' => date('Y-m-d H.i.s'),
+        ];
+        DB::table('posts')->insert($post);
+    }
+
+    public function updatePost(PostCRUDRequest $request)
+    {
+        $data = $request->validated();
+    }
+
+    public function deletePost(PostCRUDRequest $request)
+    {
+        $data = $request->validated();
     }
 }
