@@ -24,6 +24,7 @@ class ProductCRUDRequest extends FormRequest
     {
         return [
             'serviceID' => ['required', 'int'],
+            'productID' => ['int'],
             'name' => ['required', 'string', 'max:300'],
             'price' => ['required', 'numeric', 'min:0.01'],
             'image' => ['nullable', 'image', 'max:10240'],

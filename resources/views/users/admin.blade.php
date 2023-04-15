@@ -44,7 +44,10 @@
 
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Редагувати продукт">
-                        <product-updater></product-updater>
+                        <product-updater link="{{ route('update_product') }}"
+                                         :services="{{ json_encode($services) }}"
+                                         :products="{{ json_encode($products) }}">
+                        </product-updater>
                     </button-with-modal-window>
 
                     <button-with-modal-window class="list-of-opportunities__button"

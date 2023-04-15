@@ -2,10 +2,10 @@
   <form @submit.prevent="sendData" enctype="multipart/form-data" class="service-updater">
     <h3 class="service-updater__title">Редагування послуги</h3>
 
-    <label class="service-updater__label" for="service">Послуга: </label>
+    <label class="service-updater__label" for="services">Послуга: </label>
     <select v-model="serviceID"
             @change="showContentForUpdate"
-            id="service"
+            id="services"
             class="service-updater__input-field service-updater__input-field--select"
             name="service"
             required>
@@ -164,6 +164,7 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 2vw;
   }
 
   &__label {

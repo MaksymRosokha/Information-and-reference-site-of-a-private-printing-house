@@ -26,8 +26,8 @@ class AdminController extends Controller
     {
         return view('users.admin', [
             'services' => Service::all()->toArray(),
-            'products' => response()->json(Product::all()),
-            'posts' => response()->json(Post::all()),
+            'products' => Product::all()->toArray(),
+            'posts' => Post::all()->toArray(),
         ]);
     }
 
@@ -53,7 +53,7 @@ class AdminController extends Controller
     public function updateService(ServiceCRUDRequest $request)
     {
         $data = $request->validated();
-        $service = Service::whereId($data['serviceID'])->first();
+        $service = Service::whereId($data['serviceID'])->firstOrFail();
         $image = $service->image;
 
         if ($request->hasFile('image')) {
@@ -103,6 +103,26 @@ class AdminController extends Controller
     public function updateProduct(ProductCRUDRequest $request)
     {
         $data = $request->validated();
+        $product = Product::whereId($data['productID'])->firstOrFail();
+        $image = $product->image;
+
+        if ($request->hasFile('image')) {
+            if (Storage::exists('public/images/products/' . $product->image)
+                && $image !== 'default/defaultProduct.png') {
+                Storage::delete('public/images/products/' . $product->image);
+            }
+            $image = $this->moveImageToStorage(
+                imageData: $request->file('image'),
+                pathToFolder: AdminController::PATH_TO_PRODUCT_IMAGES
+            );
+        }
+
+        $product->update([
+            'service_id' => $data['serviceID'],
+            'name' => $data['name'],
+            'price' => $data['price'],
+            'image' => $image,
+        ]);
     }
 
     public function deleteProduct(ProductCRUDRequest $request)
