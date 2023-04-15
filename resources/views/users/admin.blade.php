@@ -54,7 +54,10 @@
 
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Видалити продукт">
-                        <product-deleter></product-deleter>
+                        <product-deleter link="{{ route('delete_product') }}"
+                                         :services="{{ json_encode($services) }}"
+                                         :products="{{ json_encode($products) }}">
+                        </product-deleter>
                     </button-with-modal-window>
                 </li>
                 <li class="list-of-opportunities__block">

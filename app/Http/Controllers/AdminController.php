@@ -59,7 +59,7 @@ class AdminController extends Controller
 
         if ($request->hasFile('image')) {
             if (Storage::exists('public/images/services/' . $service->image)
-                && $image !== 'default/defaultServiceImage.png') {
+                && $image !== AdminController::DEFAULT_SERVICE_IMAGE) {
                 Storage::delete('public/images/services/' . $service->image);
             }
             $image = $this->moveImageToStorage(
@@ -80,11 +80,11 @@ class AdminController extends Controller
         $request->validate([
             'id' => ['required', 'int'],
         ]);
-        $service = Service::whereId($request['id']);
+        $service = Service::whereId($request['id'])->firstOrFail();
         $image = $service->image;
 
         if (Storage::exists('public/images/services/' . $service->image)
-            && $image !== 'default/defaultServiceImage.png') {
+            && $image !== AdminController::DEFAULT_SERVICE_IMAGE) {
             Storage::delete('public/images/services/' . $service->image);
         }
 
@@ -120,7 +120,7 @@ class AdminController extends Controller
 
         if ($request->hasFile('image')) {
             if (Storage::exists('public/images/products/' . $product->image)
-                && $image !== 'default/defaultProduct.png') {
+                && $image !== AdminController::DEFAULT_PRODUCT_IMAGE) {
                 Storage::delete('public/images/products/' . $product->image);
             }
             $image = $this->moveImageToStorage(
@@ -139,9 +139,20 @@ class AdminController extends Controller
         ]);
     }
 
-    public function deleteProduct(ProductCRUDRequest $request)
+    public function deleteProduct(Request $request)
     {
-        $data = $request->validated();
+        $request->validate([
+            'id' => ['required', 'int'],
+        ]);
+        $product = Product::whereId($request['id'])->firstOrFail();
+        $image = $product->image;
+
+        if (Storage::exists('public/images/products/' . $product->image)
+            && $image !== AdminController::DEFAULT_PRODUCT_IMAGE) {
+            Storage::delete('public/images/products/' . $product->image);
+        }
+
+        $product->delete();
     }
 
     public function createPost(PostCRUDRequest $request)
@@ -174,7 +185,7 @@ class AdminController extends Controller
 
         if ($request->hasFile('image')) {
             if (Storage::exists('public/images/posts/' . $post->image)
-                && $image !== 'default/defaultNews.jpg') {
+                && $image !== AdminController::DEFAULT_POST_IMAGE) {
                 Storage::delete('public/images/posts/' . $post->image);
             }
             $image = $this->moveImageToStorage(

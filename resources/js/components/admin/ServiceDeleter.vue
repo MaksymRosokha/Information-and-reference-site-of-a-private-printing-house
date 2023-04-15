@@ -1,11 +1,11 @@
 <template>
   <form @submit.prevent="sendData" class="service-deleter">
     <h3 class="service-deleter__title">Видалення послуги</h3>
-    <label class="service-deleter__label" for="type">Послуга: </label>
+    <label class="service-deleter__label" for="services">Послуга: </label>
     <select v-model="id"
-            id="type"
+            id="services"
             class="service-deleter__input-field service-deleter__input-field--select"
-            name="type"
+            name="service"
             required>
       <option v-for="service in this.services" :value="service.id">{{ service.name }}</option>
     </select>
@@ -58,9 +58,6 @@ export default {
     }
   },
   methods: {
-    setImage(event){
-      this.image = event.target.files[0];
-    },
     sendData() {
       this.result.errors = {};
       const formData = new FormData();
@@ -72,8 +69,6 @@ export default {
             this.result.text = "Послуга успішно видалена";
             this.result.type = "success";
             this.result.isVisible = true;
-            this.name = '';
-            this.$refs.imageInput.value = null;
           })
           .catch(error => {
             if (error.response && error.response.data && error.response.data.errors) {
