@@ -9,6 +9,7 @@ use App\Models\Post;
 use App\Models\Product;
 use App\Models\Service;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Storage;
 
 class AdminController extends Controller
@@ -74,9 +75,12 @@ class AdminController extends Controller
         ]);
     }
 
-    public function deleteService(ServiceCRUDRequest $request)
+    public function deleteService(Request $request)
     {
-        $data = $request->validated();
+        $request->validate([
+            'id' => ['required', 'int'],
+        ]);
+        $service = Service::whereId($request['id'])->delete();
     }
 
     public function createProduct(ProductCRUDRequest $request)

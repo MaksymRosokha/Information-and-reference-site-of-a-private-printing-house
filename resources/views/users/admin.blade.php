@@ -29,7 +29,9 @@
 
                     <button-with-modal-window class="list-of-opportunities__button"
                                               button-text="Видалити послугу">
-                        <service-deleter></service-deleter>
+                        <service-deleter link="{{ route('delete_service') }}"
+                                         :services="{{ json_encode($services) }}">
+                        </service-deleter>
                     </button-with-modal-window>
                 </li>
                 <li class="list-of-opportunities__block">
