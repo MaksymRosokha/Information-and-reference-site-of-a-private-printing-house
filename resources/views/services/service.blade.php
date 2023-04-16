@@ -13,7 +13,9 @@
 @section('content')
     <section class="service">
         <h2 class="service__title">{{$service->name}}</h2>
-
+        @if(empty($service->products[0]))
+            <p class="service__empty-products">Для послуги "{{$service->name}}" поки що не має продуктів</p>
+        @else
         <table class="service__table-of-products table-of-products">
             <tr class="table-of-products__row">
                 <th class="table-of-products__column table-of-products__column--title table-of-products__column--image">
@@ -42,5 +44,6 @@
                 </tr>
             @endforeach
         </table>
+        @endif
     </section>
 @endsection
