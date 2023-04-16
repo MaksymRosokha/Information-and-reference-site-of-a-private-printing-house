@@ -88,6 +88,16 @@
                         <pre class="post__text">{{ $post->content }}</pre>
                     </li>
                 @endforeach
+                <aside class="list-of-posts__pagination pagination">
+                    <a href="{{route('showAnotherPostsPage', ['page' => ($numberOfPostsPage - 1)])}}"
+                       class="pagination__link"><<</a>
+                    @for($i = 1; $i <= $countOfPostsPages; $i++)
+                        <a href="{{route('showAnotherPostsPage', ['page' => $i])}}"
+                           class="pagination__link @if($numberOfPostsPage === $i) pagination__link--selected @endif">{{ $i }}</a>
+                    @endfor
+                    <a href="{{route('showAnotherPostsPage', ['page' => ($numberOfPostsPage + 1)])}}"
+                       class="pagination__link">>></a>
+                </aside>
             </ul>
         </section>
         <section id="contacts" class="main__contacts contacts main__section">

@@ -124,6 +124,35 @@
   white-space: pre-wrap;
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+.pagination__link {
+  border: solid 1px #ffffff;
+  color: white;
+  text-decoration: none;
+  padding: 3px;
+  width: 35px;
+  text-align: center;
+  background-color: rgba(255, 151, 1, 0.6509803922);
+}
+.pagination__link:hover {
+  color: #ffff00;
+  font-weight: 700;
+  border: solid 1px #f60000;
+}
+.pagination__link--selected {
+  color: #ffff00;
+  font-weight: 700;
+  border: solid 1px #f60000;
+  cursor: default;
+}
+
 .contacts {
   width: 100%;
   margin: 1vw;

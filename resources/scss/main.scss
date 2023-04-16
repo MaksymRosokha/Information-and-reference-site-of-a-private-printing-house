@@ -164,6 +164,10 @@
 
   &__post {
   }
+
+  &__pagination {
+
+  }
 }
 .post {
   width: 100%;
@@ -203,6 +207,36 @@
   }
 }
 
+.pagination {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 100%;
+  height: fit-content;
+
+  &__link {
+    border: solid 1px #ffffff;
+    color: white;
+    text-decoration: none;
+    padding: 3px;
+    width: 35px;
+    text-align: center;
+    background-color: #ff9701a6;
+
+    &:hover {
+      color: #ffff00;
+      font-weight: 700;
+      border: solid 1px #f60000;
+    }
+
+    &--selected {
+      color: #ffff00;
+      font-weight: 700;
+      border: solid 1px #f60000;
+      cursor: default;
+    }
+  }
+}
 
 .contacts {
   width: 100%;
