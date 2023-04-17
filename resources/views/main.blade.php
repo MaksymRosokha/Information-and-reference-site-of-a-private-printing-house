@@ -79,25 +79,29 @@
         <section id="news" class="main__news news main__section">
             <h2 class="news__title title">Новини</h2>
             <ul class="news__list-of-posts list-of-posts">
-                @foreach($posts as $post)
-                    <li class="list-of-posts__post post">
-                        <img src="/storage/images/posts/{{ $post->image }}"
-                             alt="Зображення поста {{ $post->title }}"
-                             class="post__image">
-                        <h4 class="post__title">{{ $post->title }}</h4>
-                        <pre class="post__text">{{ $post->content }}</pre>
-                    </li>
-                @endforeach
-                <aside class="list-of-posts__pagination pagination">
-                    <a href="{{route('showAnotherPostsPage', ['page' => ($numberOfPostsPage - 1)])}}"
-                       class="pagination__link"><<</a>
-                    @for($i = 1; $i <= $countOfPostsPages; $i++)
-                        <a href="{{route('showAnotherPostsPage', ['page' => $i])}}"
-                           class="pagination__link @if($numberOfPostsPage === $i) pagination__link--selected @endif">{{ $i }}</a>
-                    @endfor
-                    <a href="{{route('showAnotherPostsPage', ['page' => ($numberOfPostsPage + 1)])}}"
-                       class="pagination__link">>></a>
-                </aside>
+                @if(!empty($posts[0]))
+                    @foreach($posts as $post)
+                        <li class="list-of-posts__post post">
+                            <img src="/storage/images/posts/{{ $post->image }}"
+                                 alt="Зображення поста {{ $post->title }}"
+                                 class="post__image">
+                            <h4 class="post__title">{{ $post->title }}</h4>
+                            <pre class="post__text">{{ $post->content }}</pre>
+                        </li>
+                    @endforeach
+                    <aside class="list-of-posts__pagination pagination">
+                        <a href="{{route('showAnotherPostsPage', ['page' => ($numberOfPostsPage - 1)])}}"
+                           class="pagination__link"><<</a>
+                        @for($i = 1; $i <= $countOfPostsPages; $i++)
+                            <a href="{{route('showAnotherPostsPage', ['page' => $i])}}"
+                               class="pagination__link @if($numberOfPostsPage === $i) pagination__link--selected @endif">{{ $i }}</a>
+                        @endfor
+                        <a href="{{route('showAnotherPostsPage', ['page' => ($numberOfPostsPage + 1)])}}"
+                           class="pagination__link">>></a>
+                    </aside>
+                @else
+                    <p class="list-of-posts__no-posts">Пости не додані</p>
+                @endif
             </ul>
         </section>
         <section id="contacts" class="main__contacts contacts main__section">

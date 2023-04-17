@@ -168,6 +168,13 @@
   &__pagination {
 
   }
+
+  &__no-posts {
+    color: white;
+    font-size: 1.2em;
+    font-weight: 700;
+    text-align: center;
+  }
 }
 .post {
   width: 100%;
@@ -240,7 +247,7 @@
 
 .contacts {
   width: 100%;
-  margin: 1vw;
+  margin: 1vw 0 1vw 0;
 
   // .contacts__title
 
