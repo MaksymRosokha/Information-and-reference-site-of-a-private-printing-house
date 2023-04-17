@@ -23,6 +23,9 @@
   font-size: 1.2em;
   text-align: center;
 }
+.service__search {
+  margin: 1vw;
+}
 
 .table-of-products {
   width: 80%;

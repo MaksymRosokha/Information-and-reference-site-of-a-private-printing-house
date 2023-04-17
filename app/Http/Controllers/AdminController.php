@@ -49,6 +49,8 @@ class AdminController extends Controller
             'type' => $data['type'],
             'image' => $image,
         ]);
+
+        return Service::all()->toArray();
     }
 
     private function moveImageToStorage($imageData, string $pathToFolder): string
