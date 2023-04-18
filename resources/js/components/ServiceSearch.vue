@@ -9,7 +9,7 @@
 
 <script>
 export default {
-  name: "Search",
+  name: "ServiceSearch",
   data() {
     return {
       text: '',

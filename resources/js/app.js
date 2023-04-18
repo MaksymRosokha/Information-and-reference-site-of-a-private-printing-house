@@ -7,7 +7,7 @@ import './bootstrap';
 import { createApp } from 'vue';
 import components from "./components/UI/index";
 import adminComponents from "./components/admin/index";
-import search from "./components/Search.vue";
+import serviceSearch from "./components/ServiceSearch.vue";
 // /**
 //  * Next, we will create a fresh Vue application instance. You may then begin
 //  * registering components with the application instance so they are ready
@@ -21,7 +21,7 @@ components.forEach(component => {
 adminComponents.forEach(component => {
     app.component(component.name, component);
 });
-app.component('search', search);
+app.component('service-search', serviceSearch);
 /**
  * The following block of code may be used to automatically register your
  * Vue components. It will recursively scan this directory for the Vue

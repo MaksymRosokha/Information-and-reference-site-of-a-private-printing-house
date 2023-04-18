@@ -13,7 +13,7 @@
 @section('content')
     <section class="service">
         <h2 class="service__title">{{$service->name}}</h2>
-        <search class="service__search" :service="{{ $service->id }}"></search>
+        <service-search class="service__search" :service="{{ $service->id }}"></service-search>
         @if(empty($products[0]))
             <p class="service__empty-products">Не вдалося знайти продукти</p>
         @else
