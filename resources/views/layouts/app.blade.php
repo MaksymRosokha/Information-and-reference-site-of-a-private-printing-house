@@ -25,7 +25,7 @@
     <meta property="og:local" content="uk_UA">
     <meta property="og:type" content="website">
     <meta property="og:url" content="{{ route('main') }}">
-    <meta property="og:image" content="/storage/images/logo.png">
+    <meta property="og:image" content="/public/storage/images/logo.png">
     <meta property="og:site_name" content="Скарбничка нотаріуса. Видавництво ІВА">
     <meta property="article:modified_time" content="2020-04-12T13:01:04+00:00"/>
     <meta property="og:description"
@@ -38,14 +38,14 @@
     <meta name="twitter:description"
           content="Поліграфічні послуги,Все для нотаріата,Буклети,Візитки,Видання книг,Друк на банері, Таблички,
           Журнали обліку, бланки,Прошивка курсових, дипломних робіт">
-    <meta name="twitter:image" content="/storage/images/logo.png">
+    <meta name="twitter:image" content="/public/storage/images/logo.png">
 
     <meta itemprop="name"
           content="Доступні реєстри за новою формою. - Скарбничка нотаріуса. Видавництво ІВА. @yield('title')">
     <meta itemprop="description"
           content="Поліграфічні послуги,Все для нотаріата,Буклети,Візитки,Видання книг,Друк на банері, Таблички,
           Журнали обліку, бланки,Прошивка курсових, дипломних робіт">
-    <meta itemprop="image" content="/storage/images/logo.png">
+    <meta itemprop="image" content="/public/storage/images/logo.png">
 
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
