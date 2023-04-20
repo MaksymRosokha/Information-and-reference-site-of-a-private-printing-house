@@ -3,7 +3,7 @@
 @section('title', 'Вхід')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/login.css">
+    <link rel="stylesheet" href="/public/css/login.css?ver=5.4.12">
 @endsection
 
 @section('scripts')

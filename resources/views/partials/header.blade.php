@@ -2,15 +2,15 @@
     <h2 class="visibility-hidden">Header</h2>
     <div class="header__wrapper">
         <div class="header__general-information">
-            <img class="header__logo" src="/storage/images/header/header_top-bottom.jpg" alt="Логотип">
+            <img class="header__logo" src="/public/storage/images/header/header_top-bottom.jpg" alt="Логотип">
             <img class="header__logo logo__more-than-1024px"
-                 src="/storage/images/header/header_center.jpg"
+                 src="/public/storage/images/header/header_center.jpg"
                  alt="Логотип">
             <img class="header__logo logo__1024px"
-                 src="/storage/images/header/header_center1024px.jpg"
+                 src="/public/storage/images/header/header_center1024px.jpg"
                  alt="Логотип">
             <img class="header__logo logo__768px"
-                 src="/storage/images/header/header_center768px.jpg"
+                 src="/public/storage/images/header/header_center768px.jpg"
                  alt="Логотип">
         </div>
         <div class="header__bottom-logo">

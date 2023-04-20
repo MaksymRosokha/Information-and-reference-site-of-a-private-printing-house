@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('styles')
-    <link rel="stylesheet" href="/css/main.css">
+    <link rel="stylesheet" href="/public/css/main.css?ver=5.4.12">
 @endsection
 
 @section('scripts')
@@ -54,7 +54,7 @@
                 @foreach($printing_services as $service)
                     <li class="printing-services__service service">
                         <a href="{{ route('service', ['id' => $service->id]) }}" class="service__link">
-                            <img src="/storage/images/services/{{$service->image}}"
+                            <img src="/public/storage/images/services/{{$service->image}}"
                                  alt="Зображення послуги {{ $service->name }}"
                                  class="service__image">
                         </a>
@@ -68,7 +68,7 @@
                 @foreach($notaries as $notary)
                     <li class="everything-for-notary__service service">
                         <a href="{{ route('service', ['id' => $notary->id]) }}" class="service__link">
-                            <img src="/storage/images/services/{{ $notary->image }}"
+                            <img src="/public/storage/images/services/{{ $notary->image }}"
                                  alt="Зображення послуги {{ $notary->name }}"
                                  class="service__image">
                         </a>
@@ -82,7 +82,7 @@
                 @if(!empty($posts[0]))
                     @foreach($posts as $post)
                         <li class="list-of-posts__post post">
-                            <img src="/storage/images/posts/{{ $post->image }}"
+                            <img src="/public/storage/images/posts/{{ $post->image }}"
                                  alt="Зображення поста {{ $post->title }}"
                                  class="post__image">
                             <h4 class="post__title">{{ $post->title }}</h4>

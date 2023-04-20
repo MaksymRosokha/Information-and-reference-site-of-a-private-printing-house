@@ -3,7 +3,7 @@
 @section('title', $service->name)
 
 @section('styles')
-    <link rel="stylesheet" href="/css/service.css">
+    <link rel="stylesheet" href="/public/css/service.css?ver=5.4.12">
 @endsection
 
 @section('scripts')
@@ -12,7 +12,7 @@
 
 @section('content')
     <section class="service">
-        <h2 class="service__title">{{$service->name}}</h2>
+        <h2 class="service__title">{{ $service->name }}</h2>
         <service-search class="service__search" :service="{{ $service->id }}"></service-search>
         @if(empty($products[0]))
             <p class="service__empty-products">Не вдалося знайти продукти</p>
@@ -33,7 +33,7 @@
                     <tr class="table-of-products__row table-of-products__product product">
                         <td class="table-of-products__column table-of-products__column--image   ">
                             <img class="product__image"
-                                 src="/storage/images/products/{{$product->image}}"
+                                 src="/public/storage/images/products/{{$product->image}}"
                                  alt="Картинка продукту {{$product->name}}">
                         </td>
                         <td class="table-of-products__column table-of-products__column--name">

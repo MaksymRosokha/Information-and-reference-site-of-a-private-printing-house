@@ -50,16 +50,16 @@
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
     <title>Доступні реєстри за новою формою. - Скарбничка нотаріуса. Видавництво ІВА. @yield('title')</title>
-    <link rel="icon" href="/storage/images/logo.png" type="image/icon">
+    <link rel="icon" href="/public/storage/images/Logo.png" type="image/icon">
 
-    <link rel="stylesheet" href="/css/reboot.css">
-    <link rel="stylesheet" href="/css/helpers.css">
-    <link rel="stylesheet" href="/css/app.css">
-    <link rel="stylesheet" href="/css/header.css"/>
-    <link rel="stylesheet" href="/css/footer.css"/>
+    <link rel="stylesheet" href="/public/css/reboot.css?ver=5.4.12">
+    <link rel="stylesheet" href="/public/css/helpers.css?ver=5.4.12">
+    <link rel="stylesheet" href="/public/css/app.css?ver=5.4.12">
+    <link rel="stylesheet" href="/public/css/header.css?ver=5.4.12"/>
+    <link rel="stylesheet" href="/public/css/footer.css?ver=5.4.12"/>
     @yield('styles')
 
-    <script src="/js/app.js" defer></script>
+    <script src="/public/js/app.js" defer></script>
     @yield('scripts')
 </head>
 <body>
